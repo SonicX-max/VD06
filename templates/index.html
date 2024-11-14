@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета пользователя</title>
+</head>
+<body>
+    <h1>Анкета пользователя</h1>
+    <form method="POST">
+        <label for="name">Имя:</label>
+        <input type="text" name="name" id="name" required><br>
+
+        <label for="city">Город:</label>
+        <input type="text" name="city" id="city" required><br>
+
+        <label for="hobby">Хобби:</label>
+        <input type="text" name="hobby" id="hobby" required><br>
+
+        <label for="age">Возраст:</label>
+        <input type="number" name="age" id="age" required><br>
+
+        <input type="submit" value="Отправить">
+    </form>
+
+    {% if name and city and hobby and age %}
+        <h2>Введенные данные:</h2>
+        <p>Имя: {{ name }}</p>
+        <p>Город: {{ city }}</p>
+        <p>Хобби: {{ hobby }}</p>
+        <p>Возраст: {{ age }}</p>
+    {% endif %}
+</body>
+</html>
